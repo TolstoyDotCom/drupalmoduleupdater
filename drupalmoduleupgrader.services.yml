@@ -14,8 +14,8 @@ services:
     class: Drupal\Core\Plugin\DefaultPluginManager
     arguments:
       - Plugin/DMU/Indexer
-      - @container.namespaces
-      - @module_handler
+      - '@container.namespaces'
+      - '@module_handler'
       - Drupal\drupalmoduleupgrader\IndexerInterface
       - Drupal\drupalmoduleupgrader\Annotation\Indexer
 
@@ -31,8 +31,8 @@ services:
     class: Drupal\Core\Plugin\DefaultPluginManager
     arguments:
       - Plugin/DMU/Analyzer
-      - @container.namespaces
-      - @module_handler
+      - '@container.namespaces'
+      - '@module_handler'
       - Drupal\drupalmoduleupgrader\AnalyzerInterface
       - Drupal\drupalmoduleupgrader\Annotation\Analyzer
 
@@ -41,8 +41,8 @@ services:
     class: Drupal\Core\Plugin\DefaultPluginManager
     arguments:
       - Plugin/DMU/Converter
-      - @container.namespaces
-      - @module_handler
+      - '@container.namespaces'
+      - '@module_handler'
       - Drupal\drupalmoduleupgrader\ConverterInterface
       - Drupal\drupalmoduleupgrader\Annotation\Converter
 
@@ -55,8 +55,8 @@ services:
     class: Drupal\Core\Plugin\DefaultPluginManager
     arguments:
       - Plugin/DMU/Fixer
-      - @container.namespaces
-      - @module_handler
+      - '@container.namespaces'
+      - '@module_handler'
       - Drupla\drupalmoduleupgrader\FixerInterface
       - Drupal\drupalmoduleupgrader\Annotation\Fixer
 
@@ -69,8 +69,8 @@ services:
     class: Drupal\Core\Plugin\DefaultPluginManager
     arguments:
       - Plugin/DMU/Rewriter
-      - @container.namespaces
-      - @module_handler
+      - '@container.namespaces'
+      - '@module_handler'
       - Drupal\drupalmoduleupgrader\RewriterInterface
       - Drupal\drupalmoduleupgrader\Annotation\Rewriter
 
@@ -78,18 +78,18 @@ services:
     class: Drupal\Core\Plugin\DefaultPluginManager
     arguments:
       - Plugin/DMU/Routing
-      - @container.namespaces
-      - @module_handler
+      - '@container.namespaces'
+      - '@module_handler'
       - Drupal\drupalmoduleupgrader\Routing\RouteConverterInterface
       - Drupal\drupalmoduleupgrader\Annotation\Converter
 
   drupalmoduleupgrader.link_binding:
     class: Drupal\drupalmoduleupgrader\Routing\LinkBinding\LinkBindingFactory
     arguments:
-      - @plugin.manager.menu.link
+      - '@plugin.manager.menu.link'
 
   drupalmoduleupgrader.form_converter:
     class: Drupal\drupalmoduleupgrader\Utility\FormConverterFactory
     arguments:
-      - @string_translation
-      - @plugin.manager.drupalmoduleupgrader.rewriter
+      - '@string_translation'
+      - '@plugin.manager.drupalmoduleupgrader.rewriter'
